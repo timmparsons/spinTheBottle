@@ -19,7 +19,6 @@ class BottleSpinner extends React.Component {
    this.setState({
      animation: !this.state.animation
    })
-   alert("You're ready!")
   }
 
   render() { 
