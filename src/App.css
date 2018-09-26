@@ -1,0 +1,70 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+
+
+/* Home button section */
+#homeButton {
+  height: 40px;
+  position: relative;
+  left: 25px;
+  top: 25px;
+}
+
+/* H1 Header */
+#spinItHeader {
+  font-family: Impact;
+  font-size: 72px;
+  color: #161616;
+  letter-spacing: -0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 40px;
+  margin-bottom: 15px;
+}
+
+/* Divider Section */
+.dividerSection {
+  text-align: center;
+}
+#dividerIcon {
+  width: 400px;
+  margin: 0 auto;
+}
+
+/* Want to try something Main Text */
+.mainTextPara {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #161616;
+  letter-spacing: -0.28px;
+  text-align: center;
+  padding: 0 120px;
+}
+
+/* Circle of beers */
+.bottleCircleSection {
+  text-align: center;
+}
+
+#bottleCircle {
+  height: 600px;
+}
+
+/*BottleSpinner */
+.bottleSpinner {
+  height: 380px;
+  position: absolute;
+  left: 159px;
+  top: 200px;
+}
+
+.bottleSpinnerSpin {
+  animation: bottleSpin 1s ;
+  transform-origin: center center;  
+}
+
+@keyframes bottleSpin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
