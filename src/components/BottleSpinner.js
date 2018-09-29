@@ -23,7 +23,7 @@ class BottleSpinner extends React.Component {
 
   render() { 
     return (
-      <a onClick={this.showAlert} className={ this.state.animation ? "bottleSpinnerSpin bottleSpinner" : "bottleSpinner"}><img src={Bottle} alt="BottleSpinner" className="bottleSpinner" /></a>
+      <a onClick={this.showAlert} className={ this.state.animations}><img src={Bottle} alt="BottleSpinner" className="bottleSpinner" /></a>
     )
   }
 }

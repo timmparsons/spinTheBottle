@@ -53,18 +53,14 @@
 
 /*BottleSpinner */
 .bottleSpinner {
+  position: relative;
   height: 380px;
-  position: absolute;
-  left: 159px;
-  top: 200px;
-}
-
-.bottleSpinnerSpin {
-  animation: bottleSpin 1s ;
-  transform-origin: center center;  
+  left: -170px;
+  top: -50px;
+  animation: bottleSpin 4s;
 }
 
 @keyframes bottleSpin {
-  0% {transform: rotate(0deg);}
+  0% {transform: rotate(0);}
   100% {transform: rotate(360deg);}
 }
