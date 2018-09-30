@@ -8,7 +8,7 @@ import BottleCircle from './BottleCircle';
 
 const backgroundStyle = {
   width: "740px",
-  height: "100vh",
+  height: "100%",
   backgroundImage: `url(${Cardboard})`
 }
 const SpinnerApp = () => (

@@ -15,15 +15,18 @@ class BottleSpinner extends React.Component {
   }
 
 
-  showAlert() {
-   this.setState({
-     animation: !this.state.animation
-   })
+  showAlert () {
+    setTimeout(() => {
+      this.setState({
+        animation: !this.state.animation
+      })
+    }, 8000);
   }
+
 
   render() { 
     return (
-      <a onClick={this.showAlert} className={ this.state.animations}><img src={Bottle} alt="BottleSpinner" className="bottleSpinner" /></a>
+      <img onClick={this.showAlert} src={Bottle} alt="BottleSpinner"  className={this.state.animation ? "bottleSpinnerSpin" : "bottleSpin"} />
     )
   }
 }
