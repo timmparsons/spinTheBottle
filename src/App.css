@@ -59,15 +59,11 @@
   top: -75px;
 }
 
-.bottleSpinnerSpin {
-  position: relative;
-  height: 380px;
-  right: 350px;
-  top: -75px;
+.bottleSpinAnimation {
   animation: bottleSpin 4s;
 }
 
 @keyframes bottleSpin {
   0% {transform: rotate(0);}
-  100% {transform: rotate(359deg);}
+  100% {transform: rotate(1000deg);}
 }
