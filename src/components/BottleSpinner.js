@@ -1,13 +1,25 @@
 import React from 'react';
 import Bottle from '../img/spin_bottle_mockup-4.png';
+import styled, { keyframes } from 'styled-components'
 
 /* Create styled div with keyframes and animation function */
 
-const bottleSpinnerSpin = {
-  position: 'relative',
+const bottleSpinnerSpin = styled.div`
+  position: 'relative';
   top: '-475px',
-  height: '350px'
-}
+  height: '350px';
+  animation: ${bottleSpin} 4s;
+}`
+
+const bottleSpin = keyframes `
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(36pdeg);
+  }
+  }`
+ 
 
 
 class BottleSpinner extends React.Component {
