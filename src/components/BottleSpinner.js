@@ -1,44 +1,65 @@
-import React from 'react';
-import Bottle from '../img/spin_bottle_mockup-4.png';
+import React, { Fragment } from "react";
+import Bottle from "../img/spin_bottle_mockup-4.png";
 
 /* Create styled div with keyframes and animation function */
-
-const bottleSpinnerSpin = {
-  position: 'relative',
-  top: '-475px',
-  height: '350px'
-}
-
 
 class BottleSpinner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      animationName: ''
+      duration: 0,
+      position: 0,
+      positionEnd: 0
     };
-    this.rotate = this.rotate.bind(this);
   }
 
-  rotate(){
-    let bottleElem = document.getElementById("bottleElem");
-    let spinTime = (Math.floor(Math.random() * 500) + 1);
-    console.log(spinTime);
-    bottleElem.style.animation = "bottleSpin 10s";
-  }
+  SPEED = 360;
 
-  alert() {
-    alert("Pick a number");    
-  }
+  animationStart = () => {
+    if (this.state.animation) return;
+    const duration = 1 + Math.random() * 6;
+    this.setState({
+      duration,
+      positionEnd: this.state.position + duration * this.SPEED
+    });
+  };
+
+  animationEnd = () => {
+    console.log("animation end", this.state.positionEnd);
+    this.setState({ duration: 0, position: this.state.positionEnd });
+  };
 
   render() {
+    const bottleStyle = {
+      transform: `rotate(${this.state.position}deg)`,
+      ...(this.state.duration
+        ? { animation: `bottleSpin ${this.state.duration}s` }
+        : {})
+    };
     return (
-      <div>
-       <img style={bottleSpinnerSpin} src={Bottle} onClick={this.rotate} id="bottleElem" alt="spinning-bottle" />
-    </div>
-    )  
+      <Fragment>
+        <style>{`
+@keyframes bottleSpin {
+  0% {
+    transform: rotate(${this.state.position}deg);
+  }
+  100% {
+    transform: rotate(${this.state.positionEnd}deg);
+  }
+}`}</style>
+        <img
+          onClick={this.animationStart}
+          src={Bottle}
+          alt="BottleSpinner"
+          className="bottleSpin"
+          style={bottleStyle}
+          onAnimationEnd={this.animationEnd}
+        />
+      </Fragment>
+    );
   }
 }
 
-
 export default BottleSpinner;
+
 
